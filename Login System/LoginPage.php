@@ -1,6 +1,5 @@
 <?php
 
-
 // Initialize Login-Session
 session_start();
 

@@ -11,12 +11,12 @@
   $stat = pg_connection_status($dbconn);
   if ($stat === PGSQL_CONNECTION_OK){
   echo 'liberty';
-}else {
-echo "connection failed";
-}
+  }else {
+    echo "connection failed";
+  }
 
-if (!$dbconn){
-die("Connection Failed: ");
-}
+  if (!$dbconn){
+    die("Connection Failed: ");
+  }
 
 ?>
