@@ -9,8 +9,9 @@
 ?>
 <main>
   <h1>Sign Up</h1>
-  <fieldset>
-  <form action="Includes/Signup.Con.php" method="post">
+
+  <form action="Includes/Signup.Con.php" method="POST">
+    <fieldset>
     <label for="username">User Name:</label><br>
     <input type="text" name="username" placeholder="User-Name" required><br>
     <label for="password">Password:</label><br>
@@ -23,8 +24,9 @@
     <label for="last_name">Last Name:</label><br>
     <input type="text" name="last_name" placeholder="Last Name" required><br>
     <button type="submit" name="signup-submit">Signup</button>
+  </fieldset>
   </form>
-</fieldset>
+
 </main>
 
 <?php
