@@ -19,7 +19,7 @@ if (isset($_POST['signup-submit'])){
             header("Location: ../Signup.php?error=emailinvalid&firstname=".$first);
             exit();
         // Check if the username is in the database named three because checked afterwards
-      } else{
+      } else {
           $sql3 = "SELECT * FROM users WHERE email = $3";
           pg_prepare($dbconn,"usernameverifier",$sql3);
         // Check to see if you can execute the prepared statement
@@ -36,7 +36,6 @@ if (isset($_POST['signup-submit'])){
                 }
             }
         // Pass initial test move on to the next test
-      } else {
           $sql1 = "SELECT * FROM users WHERE email = $1";
           pg_prepare($dbconn,"emailverifier",$sql1);
         // Check to see if you can execute the prepared statement
