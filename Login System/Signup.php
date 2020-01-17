@@ -15,8 +15,8 @@
     <label for="username">User Name:</label><br>
     <input type="text" name="username" placeholder="User-Name" required><br>
     <label for="password">Password:</label><br>
-    <input type="password" name="pass" placeholder="Password" required><br>
-    <input type="password" name="pass" placeholder="Repeat Password" required><br>
+    <input type="text" name="pass" placeholder="Password" required><br>
+    <input type="text" name="passRepeat" placeholder="Repeat Password" required><br>
     <label for="email">E-Mail:</label><br>
     <input type="email" name="email" placeholder="E-Mail" required></input><br>
     <label for="first_name">First Name:</label><br>
