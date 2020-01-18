@@ -1,13 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
 <?php
-
-// Initialize Login-Session
-session_start();
-
-//Check to see if user is logged in, if so redirects the user to welcome page
-if(isset($ SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: welcome.php");
-  exit;
-}
-
-
+  require "Objects/nav.html"
  ?>
+<body>
+<main>
+  <h1>Login:</h1>
+<form action="Includes/login.Con.php" method="POST">
+  <fieldset>
+    <label for="mailuid">User Name:</label>
+    <input type="text" name="mailuid" placeholder="user-name" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
+    <button type="submit">Submit</button>
+  </fieldset>
+</form>
+
+</main>
+
+
+
+</body>
+<?php
+  require "Objects/footer.html"
+ ?>
+</html>
