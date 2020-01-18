@@ -75,7 +75,7 @@ if (isset($_POST['signup-submit'])){
         // Execute the Statement
                       } else {
                       pg_execute($dbconn,"userEmail",array(($first),($last),($email),($username),($password)));
-                      header("Location: ../Signup.php?signupSuccess");
+                      header("Location: ../Signup.php?signup=Success");
                       exit();
                     }
                   }
@@ -86,7 +86,6 @@ if (isset($_POST['signup-submit'])){
 pg_close($dbconn);
 }else {
   header("Location: ../index.php");
-  echo "failure";
   exit();
 }
 ?>

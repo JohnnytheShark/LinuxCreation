@@ -1,5 +1,12 @@
 <?php
-
+//Initialize Session
+session_start();
+//Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
+  header("Location: Welcome.php");
+  exit();
+}
+//Check to see if the user logged in with the log in system
 if(isset($_POST['login-submit'])){
   require 'dbh.php';
 
@@ -20,14 +27,20 @@ if(isset($_POST['login-submit'])){
       } else {
       $execution = pg_execute($dbconn,"username",array($mailuid));
         $results = pg_fetch_result($dbconn,$execution);
-        if($row = pg_fetch_assoc()){
-          $pwdCheck = password_verify($password, $row['password']);
+        if($row = pg_fetch_assoc($results)){
+          $pwdCheck = password_verify($password, $row['pass']);
           if($pwdCheck == false){
             header("Location: ../index.php?error=wrongPassword");
             exit();
           }
           else if($pwdCheck == true){
+            session_start();
+            $_SESSION['userId'] = $row['username'];
+            $_SESSION['name'] = $row['first_name'];
+            $_SESSION['loggedin']  = true;
 
+            header("Location: ../Welcome.php?login-success");
+            exit();
           }
           else {
             header("Location: ../index.php?error=wrongPassword");
@@ -46,7 +59,7 @@ if(isset($_POST['login-submit'])){
 
 
 } else {
-  header("Location: ../index.php");
+  header("Location: ../index.php?error=notloggedin");
   exit();
 }
 

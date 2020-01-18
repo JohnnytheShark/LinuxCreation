@@ -2,13 +2,35 @@
 <html>
 <head>
 
-
 </head>
 <?php
   require "Objects/nav.html"
 ?>
 <main>
   <h1>Sign Up</h1>
+  <?php
+  //Error Codes to check for
+    if(isset($_GET['error'])){
+      if($_GET['error'] == "emptyfields") {
+        echo '<p class="signuperror">Fill in all fields!</p>';
+      } elseif($_GET['error']=="invalidusernameandemail"){
+        echo '<p class="signuperror">Username Already Taken</p>';
+      } elseif($_GET['error']=="emailinvalid"){
+        echo '<p class="signuperror">Email is Invalid</p>';
+      } elseif($_GET['error']=="invalidusername"){
+        echo '<p class="signup error">Username should only be letters and numbers</p>';
+      } elseif($_GET['error']=="passwordrepeaterror"){
+        echo '<p class="signuperror">Both Passwords Should Match</p>';
+      } elseif($_GET['error']=="usernamealreadyinsystem"){
+        echo '<p class="signuperror">Username is already used by someone else</p>';
+      }elseif($_GET['error']=="emailalreadyinsystem"){
+        echo '<p class="signuperror">Email has already been used</p>';
+      }
+    //Success Message to submit once the customer has signed up
+    } elseif($_GET['signup'] =="Success"){
+      echo '<p class="signupsucess">Signup Successful</p>';
+    }
+   ?>
 <!-- SignUp Form -->
   <form action="Includes/Signup.Con.php" method="POST">
     <fieldset>

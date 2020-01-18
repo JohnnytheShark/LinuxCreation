@@ -17,11 +17,8 @@
     <button type="submit">Submit</button>
   </fieldset>
 </form>
-
+<p>Don't have an account <a href="Signup.php">Sign-up here</a></p>
 </main>
-
-
-
 </body>
 <?php
   require "Objects/footer.html"
