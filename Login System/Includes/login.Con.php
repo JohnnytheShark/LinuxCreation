@@ -3,11 +3,13 @@
 session_start();
 //Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
-  header("Location: Welcome.php");
+  header("Location: ../Welcome.php?error=alreadyloggedin");
   exit();
 }
+
 //Check to see if the user logged in with the log in system
-if(isset($_POST['login-submit'])){
+elseif(isset($_POST['login-submit'])){
+
   require 'dbh.php';
 
   $mailuid = pg_escape_string($dbconn,$_POST['mailuid']);
@@ -20,17 +22,18 @@ if(isset($_POST['login-submit'])){
   } else {
     $sql4 = "SELECT * FROM users WHERE username = $1";
     pg_prepare($dbconn,"userNameFetch",$sql4);
+//Check to see if you can execute
       if(!pg_execute($dbconn,"userNameFetch",array($mailuid))){
         header("Location: ../index.php?error=sqlerror");
         exit();
   // Execute the statement and retrieve the data
       } else {
-      $execution = pg_execute($dbconn,"username",array($mailuid));
-        $results = pg_fetch_result($dbconn,$execution);
-        if($row = pg_fetch_assoc($results)){
+    $query = pg_execute($dbconn,"userNameFetch",array($mailuid));
+  /*  $results = pg_fetch_result($query,0,2);*/
+        if($row = pg_fetch_assoc($query)){
           $pwdCheck = password_verify($password, $row['pass']);
           if($pwdCheck == false){
-            header("Location: ../index.php?error=wrongPassword");
+            header("Location: ../LoginPage.php?error=wrongPassword");
             exit();
           }
           else if($pwdCheck == true){
@@ -39,10 +42,9 @@ if(isset($_POST['login-submit'])){
             $_SESSION['name'] = $row['first_name'];
             $_SESSION['loggedin']  = true;
 
-            header("Location: ../Welcome.php?login-success");
+            header("Location: ../Welcome.php?login=success");
             exit();
-          }
-          else {
+          } else {
             header("Location: ../index.php?error=wrongPassword");
             exit();
           }

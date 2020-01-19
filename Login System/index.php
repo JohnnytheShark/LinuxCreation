@@ -10,9 +10,6 @@
 <li><a href="LoginPage.php">Login</a></li>
 </ul>
 </nav>
-<a href="Signup.php">Sign Up</a>
-
-
 <?php
   require 'Objects/footer.html'
  ?>
