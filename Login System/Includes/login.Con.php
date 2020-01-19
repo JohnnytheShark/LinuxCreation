@@ -13,7 +13,7 @@ if(isset($_POST['login-submit'])){
   $mailuid = pg_escape_string($dbconn,$_POST['mailuid']);
   $password = pg_escape_string($dbconn,$_POST['password']);
 //Check to see if the inputs are empty
-  if(empty(mailuid)||empty(password)) {
+  if(empty($mailuid)||empty($password)) {
     header("Location: ../index.php?error=emptyfields");
     exit();
 //Create a prepared statements
