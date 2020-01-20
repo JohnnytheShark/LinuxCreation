@@ -1,6 +1,6 @@
 #PHP + POSTGRESQL Login System
 
-## I wanted to create a login system for another project but wanted to how a template set created for future projects incase I wanted to reuse the code
+## I wanted to create a login system for another project and also wanted to create a template for future projects.
 
 ### The code in system runs off a local system between POSTGRESQL and PHP
 ----
