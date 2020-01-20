@@ -48,7 +48,7 @@
     <button type="submit" name="signup-submit">Signup</button>
   </fieldset>
   </form>
-
+  <a href="reset-password.php"> Forgot your password?</a>
 </main>
 
 <?php
