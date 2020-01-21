@@ -13,6 +13,13 @@
     <input type="text" name="email" placeholder="Enter your e-mail address...">
     <button type="submit" name="resetRequest-Submit">Receive new password by email</button>
   </form>
+  <?php
+    if(isset($_GET["reset"])) {
+      if($_GET["reset"] == "success"){
+        echo '<p class="signupsucess">Check your e-mail!</p>';
+      }
+    }
+   ?>
 </main>
 
 <?php
