@@ -24,7 +24,7 @@ if(isset($POST["resetRequest-Submit"])){
 
   $sql5 = "INSERT INTO password_reset (password_reset_email,password_reset_selector,password_reset_token,password_reset_expires) VALUES ($1,$2,$3,$4)";
   pg_prepare($dbconn,"passwordReset",$sql5);
-  if(!pg_execute($dbconn,"passwordReset",array($userEmail))){
+  if(!pg_execute($dbconn,"passwordReset",array($userEmail),("placeholder"),("placeholder"),("placeholder"))){
     echo "There was an error!";
     exit();
   } else {
