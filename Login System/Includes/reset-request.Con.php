@@ -13,13 +13,13 @@ if(isset($POST["resetRequest-Submit"])){
 
   $userEmail = pg_escape_string($dbconn,$_POST["email"]);
 
-  $sql = "DELETE FROM password_reset WHERE password_reset_email = $1"
+  $sql = "DELETE FROM password_reset WHERE password_reset_email = $1";
   pg_prepare($dbconn,"passwordReset",$sql);
   if(!pg_execute($dbconn,"passwordReset",array($userEmail))){
     echo "There was an error!";
     exit();
   } else {
-    pg_execute($dbconn,"passwordReset"array($userEmail));
+    pg_execute($dbconn,"passwordReset",array($userEmail));
   }
 
   $sql5 = "INSERT INTO password_reset (password_reset_email,password_reset_selector,password_reset_token,password_reset_expires) VALUES ($1,$2,$3,$4)";
@@ -29,7 +29,7 @@ if(isset($POST["resetRequest-Submit"])){
     exit();
   } else {
     $hashedToken = password_hash($token,PASSWORD_DEFAULT);
-    pg_execute($dbconn,"passwordReset"array(($userEmail),($selector),($hashedToken),($expires)));
+    pg_execute($dbconn,"passwordReset",array(($userEmail),($selector),($hashedToken),($expires)));
   }
 pg_close($dbconn);
 
