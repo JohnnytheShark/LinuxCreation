@@ -1,6 +1,4 @@
-# LinuxCreation
+# Projects built on Manjaro Linux
 Repository to keep all Linux Created Files
+I created this repository to store all the files that I created on my laptop. 
 
-## Trial Run to see if I can get this to work
-
-This Repository will be used to host temporary files built on linux system.
