@@ -16,5 +16,6 @@ ask the magic 8 ball a question
   -IT IS DECIDEDLY SO
   -WITHOUT A DOUBT
   -YES, DEFINITELY
+  
 6.The program should continue to run in a loop, returning a random answer to each question the person asks
 If the user doesn't enter a question and presses the enter key the application should quit
