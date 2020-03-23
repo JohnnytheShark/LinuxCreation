@@ -3,10 +3,14 @@
 
 Instructions:
 1. Create a single Python File (.py)
+
 2. Two modules need to be imported into your python file 'sys' module and 'random'
+
 3.When a user runs the project, they should receive a prompt (printed message), asking them to
 ask the magic 8 ball a question
+
 4. The user will then type in a question and press the enter key.
+
 5. Logic, built in the code, will then return a random response from the following:
   -IT IS CERTAIN
   -YOU MAY RELY ON IT
