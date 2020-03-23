@@ -24,7 +24,7 @@ ask the magic 8 ball a question
 6. The program should continue to run in a loop, returning a random answer to each question the person asks
 If the user doesn't enter a question and presses the enter key the application should quit
 
-#The second project had the following instructions:
+# The second project had the following instructions:
 Import the following modules: 
 Random, Sys, and CSV
 
