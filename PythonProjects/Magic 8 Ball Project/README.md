@@ -6,7 +6,7 @@ Instructions:
 
 2. Two modules need to be imported into your python file 'sys' module and 'random'
 
-3.When a user runs the project, they should receive a prompt (printed message), asking them to
+3. When a user runs the project, they should receive a prompt (printed message), asking them to
 ask the magic 8 ball a question
 
 4. The user will then type in a question and press the enter key.
@@ -21,5 +21,5 @@ ask the magic 8 ball a question
   -WITHOUT A DOUBT
   -YES, DEFINITELY
   
-6.The program should continue to run in a loop, returning a random answer to each question the person asks
+6. The program should continue to run in a loop, returning a random answer to each question the person asks
 If the user doesn't enter a question and presses the enter key the application should quit
